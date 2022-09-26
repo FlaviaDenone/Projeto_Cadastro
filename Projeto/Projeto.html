@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIG</title>
+    <style>
+
+        body h1{
+            background: rgb(95, 95, 190);
+            font: normal 30pt Arial;
+            text-align: center;
+        }
+        body{
+            background-color: rgb(145, 145, 197);
+            font: normal 20pt Arial;
+            
+        }
+            
+        </style>
+</head>
+<body>
+
+    <h1>Ficha de Cadastro </h1>
+    <p> Nome: <input type="text" name="txtnome" id="txtnome"></p>
+    <p>Responsavel: <input type="text" name="txtres" id="txtres"></p>
+    <p>Telefone: <input type="tel" name="txttel" id="txttel"></p>
+    <p>E-mail: <input type="email" name="txtmail" id="txtmail"></p>
+    <p>Data de Nascimento: <input type="datetime" name="txtnas" id="txtnas"></p>
+    <p>Idade: <input type="number" name="txtida" id="txtida">
+    <input type="button" value="Turma" onclick=" Calcular()"></p>
+     <div id ='res'> 
+
+     </div>
+    
+    <script>
+
+        function Calcular(){
+        var txti = window.document.getElementById('txtida')
+        var res = window.document.querySelector('div#res')
+        var idade = Number(txti.value)
+        res.innerHTML = `Essa criança tem ${idade} anos.`
+        if (idade < 6){
+            res.innerHTML += 'Ela é do grupo AMARELO.'
+        } else if(idade > 6 && idade <= 8){
+            res.innerHTML += 'Ela é do grupo AZUL'
+        } else if(idade > 8 && idade <= 10 ){
+            res.innerHTML += 'Ela é do grupo VERMELHO'
+        } else {
+            res.innerHTML += 'Ela é do grupo VERDE'
+        }
+       }
+    </script>
+    
+</body>
+</html>
